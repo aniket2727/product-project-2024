@@ -3,10 +3,13 @@
 
 
 
-const router = require('express').Router();
+
+// login.router.js
+const express = require('express');
+const router = express.Router();
 const loginController = require('../controller/login.controller');
 
-// Define routes
-router.use('/user', loginController);
+router.post('/login', loginController);
 
 module.exports = router;
+

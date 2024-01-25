@@ -1,23 +1,18 @@
-
-
-
-
-
-
-
-
-
-// index.js
 const express = require('express');
-const app = express();
+const cors = require('cors');
+const app = express(); // Create an instance of the express app
+
+// Enable CORS
+app.use(cors());
+
 const loginRouter = require('./routes/login.router');
 const registerRouter = require('./routes/register.router');
 
 app.use(express.json());
 require('./database/config');
 
-app.use('/hooks/login', loginRouter); // Update the path if needed
-app.use('/hooks/register', registerRouter); // Update the path if needed
+app.use('/hooks/login', loginRouter);
+app.use('/hooks/register', registerRouter);
 
 const PORT = 6006;
 app.listen(PORT, () => {
