@@ -49,3 +49,10 @@ export const registerUser = async (email,name, pass) => {
       throw new Error(`Error: ${error.message}`);
     }
   };
+
+
+  // 3.add about yourselfdata
+
+  export const addInofabout=(birthdatedata,gender,aboutyourself,imagedata)=>{
+
+  }

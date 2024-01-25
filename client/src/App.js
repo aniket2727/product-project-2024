@@ -7,6 +7,7 @@ import SignOut from "./componets/AuthandRegister/SignOut";
 import SignIn from './componets/AuthandRegister/SignIn';
 import FirstPage from './componets/Home/FirstPage';
 import Navigation from './componets/header/Navigation';
+import AboutinfoAddition from './componets/aboutinfo/AboutinfoAddition';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<FirstPage/>} />
             <Route path="/register" element={<SignOut />} />
             <Route path="/login" element={<SignIn />} />
+            <Route path="/aboutadd" element={<AboutinfoAddition />} />
           </Routes>
         </BrowserRouter>
       </ApiProvider>

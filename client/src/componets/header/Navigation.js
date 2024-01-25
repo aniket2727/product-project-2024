@@ -27,7 +27,7 @@ const Navigation = () => {
                 {emailFromState ? (
                     <>
                         <button onClick={()=>handleLogout}><IoMdLogOut /> LOGOUT</button>
-                        <button><IoMdPerson /> ACCOUNT</button>
+                        <button onClick={()=>navigate('/aboutadd')}><IoMdPerson/> ACCOUNT</button>
                     </>
                 ) : (
                     <>
