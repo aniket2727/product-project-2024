@@ -2,45 +2,50 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './signout.css';
-import { useApidata } from '../contextApifolder/ContextApi';
+import { registerUser } from '../Api/Handleapi';
+import { useNavigate } from 'react-router-dom';
 
 const SignOut = () => {
-  const { setApiError, setApiSuccess, clearApiMessages } = useApidata();
+  const navigate=useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setApiError('Invalid email address');
+      toast.error('Invalid Email')
       return;
     }
-  
+
     if (!password || password.length < 6) {
-      setApiError('Password must be at least 6 characters');
+      toast.error('Password must be at least 6 characters')
       return;
     }
-  
+
     if (!name || name.length < 4) {
-      setApiError('Name must be at least 2 characters');
+      toast.error('Name must be at least 4 characters')
       return;
     }
-  
-    setEmail('');
-    setPassword('');
-    setName('');
-    clearApiMessages(); // This should clear error and success messages
-  
-    setApiSuccess('Registration successful');
-    
-    // Wait for state to update, then show success toast
-    setTimeout(() => {
-      toast.success('Registration successful');
-    }, 0);
+
+    try {
+      const userData = await registerUser( email,name, password);
+      console.log('User Data:', userData);
+      toast.success('Registration successful!');
+      setEmail('');
+      setPassword('');
+      setName('');
+      navigate('/login')
+    } catch (error) {
+      console.error('Registration Error:', error.message);
+      toast.error('Registration failed. Please try again.');
+    }
+
+
+
   };
-  
+
 
   return (
     <div className='main-register'>
