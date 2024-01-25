@@ -23,10 +23,9 @@ router.post('/login', async (req, res) => {
     // Create a JWT with user information
     const token = jwt.sign({ userId: user._id, email: user.email }, 'your-secret-key', { expiresIn: '1h' });
 
-    // Set the JWT as a cookie
+    // Send user data along with the token in the response
     res.cookie('token', token, { httpOnly: true });
-
-    res.status(200).json({ message: 'Login successful', token });
+    res.status(200).json({ message: 'Login successful', token, id: user._id, email: user.email });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
