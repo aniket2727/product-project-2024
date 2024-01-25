@@ -5,6 +5,7 @@ import { ApiProvider } from './componets/contextApifolder/ContextApi';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignOut from "./componets/AuthandRegister/SignOut";
 import SignIn from './componets/AuthandRegister/SignIn';
+import FirstPage from './componets/Home/FirstPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ApiProvider>
         <BrowserRouter>
           <Routes>
+            <Route path="/" element={<FirstPage/>} />
             <Route path="/register" element={<SignOut />} />
             <Route path="/login" element={<SignIn />} />
           </Routes>
