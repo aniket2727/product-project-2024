@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ApiProvider } from './componets/contextApifolder/ContextApi';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignOut from "./componets/AuthandRegister/SignOut";
+import SignIn from './componets/AuthandRegister/SignIn';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/register" element={<SignOut />} />
+            <Route path="/login" element={<SignIn />} />
           </Routes>
         </BrowserRouter>
       </ApiProvider>
