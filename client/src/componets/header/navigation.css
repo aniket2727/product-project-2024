@@ -1,0 +1,37 @@
+
+
+
+
+.main-navigate{
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    background-color: rgb(150, 188, 203);
+}
+
+
+.LoginAndLogout{
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+.LoginAndLogout button{
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+.LoginAndLogout button :hover{
+    background-color: rgb(62, 60, 60);
+}

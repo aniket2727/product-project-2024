@@ -26,7 +26,11 @@ const SignIn = () => {
   const userData = useSelector((state) => state.user.userData);
   const token = useSelector((state) => state.user.token);
   const emailFromState = useSelector((state) => state.user.email);
-  const tokenFromState = useSelector((state) => state.user.token);
+  console.log('User Data:', userData);
+  console.log('User Data from Redux:', userData);
+  console.log('Token from Redux:', token);
+  console.log('Email from Redux:', emailFromState);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

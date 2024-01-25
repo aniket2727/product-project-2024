@@ -6,12 +6,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignOut from "./componets/AuthandRegister/SignOut";
 import SignIn from './componets/AuthandRegister/SignIn';
 import FirstPage from './componets/Home/FirstPage';
+import Navigation from './componets/header/Navigation';
 
 function App() {
   return (
     <div>
       <ApiProvider>
         <BrowserRouter>
+          <Navigation/>
           <Routes>
             <Route path="/" element={<FirstPage/>} />
             <Route path="/register" element={<SignOut />} />
