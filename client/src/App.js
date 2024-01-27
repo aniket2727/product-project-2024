@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<FirstPage/>} />
             <Route path="/register" element={<SignOut />} />
             <Route path="/login" element={<SignIn />} />
-            <Route path="/aboutadd" element={<AboutinfoAddition />} />
+            <Route path="/editprofile" element={<AboutinfoAddition />} />
             <Route path="/displayuserprofile" element={<DisplayUserProfile/>} />
           </Routes>
         </BrowserRouter>
