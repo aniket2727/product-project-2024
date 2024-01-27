@@ -13,10 +13,10 @@ const addpostRouter = require('./routes/addpost.router');
 app.use(express.json());
 require('./database/config');
 
-app.use('/hooks/login', loginRouter);
-app.use('/hooks/register', registerRouter);
-app.use('/hooks/addprofiledata', userprofileinfoRouter);
-app.use('/hooks/addpost', addpostRouter); // Corrected route
+app.use('/hooks/login', loginRouter);  // for the login user
+app.use('/hooks/register', registerRouter);   // for register user
+app.use('/hooks/addprofiledata', userprofileinfoRouter);  // add profile of the user
+app.use('/hooks/addpost', addpostRouter); // add post by the users
 
 const PORT = 8008;
 app.listen(PORT, () => {
