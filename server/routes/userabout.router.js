@@ -5,8 +5,8 @@
 // userabout.router.mjs
 const express=require('express')
 const router = express.Router();
-const userprofileinfo=require('../controller/userabout.controller')
+const adduserprofile=require('../controller/userabout.controller')
 
-router.use('/a', userprofileinfo);
+router.post('/addprofiledata',adduserprofile);
 
 module.exports = router;

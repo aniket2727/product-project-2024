@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userprofileinfo = require('../database/schemaUserInfoforProfile');
 
-router.post('/a', async (req, resp) => {
+const adduserprofile = async (req, resp) => {
     const { birthdate, gender, profileimage, aboutinfo } = req.body;
 
     try {
@@ -19,6 +19,6 @@ router.post('/a', async (req, resp) => {
     } catch (error) {
         resp.status(401).json({ message: "Error in saving data", error });
     }
-});
+};
 
-module.exports = router;
+module.exports = adduserprofile;
