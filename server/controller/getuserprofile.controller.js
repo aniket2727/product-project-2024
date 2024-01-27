@@ -1,28 +1,18 @@
+const userprofiledata = require('../database/schemaUserInfoforProfile');
 
+const getuserprofiledata = async (req, resp) => {
+    const { email } = req.body;
+    try {
+        const userProfileData = await userprofiledata.findOne({ email: email });
 
-
-const userprofilefata=require('../database/schemaUserInfoforProfile')
-
-
-
-const userprofiledata=async(req,resp)=>{
-    const {email}=req.body;
-    try{
-        
-        const getuserprofiledata=userprofiledata({email:email})
-        if(getuserprofiledata){
-            resp.status(201).json({message:"user profile data get succcessfully",getuserprofiledata})
+        if (userProfileData) {
+            resp.status(200).json({ message: "User profile data retrieved successfully", userProfileData });
+        } else {
+            resp.status(404).json({ message: "User profile data not found", userProfileData: null });
         }
-        else{
-            resp.status(401).json({message:"data is not available",getuserprofiledata})
-        }
-       
+    } catch (error) {
+        resp.status(500).json({ message: "Internal Server Error", error });
     }
-    catch(error){
-        resp.status(501).json({message:"internal error ",error})
+};
 
-    }
-}
-
-
-module.exports=userprofilefata;
+module.exports = getuserprofiledata;

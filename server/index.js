@@ -19,9 +19,9 @@ require('./database/config');
 app.use('/hooks/login', loginRouter);  // for the login user
 app.use('/hooks/register', registerRouter);   // for register user
 app.use('/hooks/addprofiledata', userprofileinfoRouter);  // add profile of the user
-app.use('/hhoks/getuserprofile',getuserprofiledata)  // get user profile data
+app.use('/hooks/getuserprofile',getuserprofiledata)  // get user profile data
 app.use('/hooks/addpost', addpostRouter); // add post by the users
-app.use('/hooks/getpost',getuserpost)  // get all posts of users
+app.use('/hooks/getpost',getuserpost)  // get all posts of user
 
 const PORT = 8008;
 app.listen(PORT, () => {
