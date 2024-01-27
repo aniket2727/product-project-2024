@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
 const addPostSchema = new mongoose.Schema({
+    
+    email:{
+    type:String,
+    require:true
+    },
+    
     postimage: {
         type: String,
         required: true

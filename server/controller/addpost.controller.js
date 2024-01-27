@@ -1,10 +1,11 @@
 const addPost = require('../database/schemaAddpost');
 
 const addPostController = async (req, resp) => {
-    const { postimage, postcaption } = req.body;
+    const { email,postimage, postcaption } = req.body;
     
     try {
         const addPostUser = new addPost({
+            email,
             postimage,
             postcaption
         });
