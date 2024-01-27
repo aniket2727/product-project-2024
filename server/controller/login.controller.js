@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
 
     // Send user data along with the token in the response
     res.cookie('token', token, { httpOnly: true });
-    res.status(200).json({ message: 'Login successful', token, id: user._id, email: user.email });
+    res.status(200).json({ message: 'Login successful', token, id: user._id, email: user.email});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
