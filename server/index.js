@@ -18,7 +18,8 @@ app.use('/hooks/login', loginRouter);  // for the login user
 app.use('/hooks/register', registerRouter);   // for register user
 app.use('/hooks/addprofiledata', userprofileinfoRouter);  // add profile of the user
 app.use('/hooks/addpost', addpostRouter); // add post by the users
-app.use('/hooks/getpost',getuserpost)  // get all user posts
+app.use('/hooks/getpost',getuserpost)  // get all posts of users
+
 const PORT = 8008;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
