@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addInofabout } from '../Api/Handleapi';
-import Displayaboutuser from './Displayaboutuser';
+
 
 const AboutinfoAddition = () => {
     const [birthdate, setBirthdate] = useState('');
@@ -19,10 +19,10 @@ const AboutinfoAddition = () => {
 
         try {
             const aboutApiResult = await addInofabout(birthdate, gender, aboutYourself, profileImage);
-             toast.success(aboutApiResult)
+            toast.success(aboutApiResult)
             toast.success('Information saved successfully!');
         } catch (error) {
-            
+
             console.error('Error saving information:', error);
             toast.error('Failed to save information. Please try again.');
         }
@@ -37,9 +37,6 @@ const AboutinfoAddition = () => {
     return (
         <div className='main-about'>
 
-            <div>
-                 <Displayaboutuser/>
-            </div>
 
             <div className='fillaboutdata'>
                 <div>

@@ -4,7 +4,7 @@
 
 // api.js
 
-const BASE_URL = 'http://localhost:6006/hooks';
+const BASE_URL = 'http://localhost:8008/hooks';
 
 // 1.apis for login
 export const loginUser = async (email, pass) => {
