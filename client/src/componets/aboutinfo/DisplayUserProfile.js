@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaConnectdevelop, FaEdit, FaPen, FaTrash } from 'react-icons/fa';
 import './DisplayUserProfile.css';
+import { useNavigate } from 'react-router-dom';
 
-const DisplayUserProfile = () => {
+const DisplayUserProfile = () =>{
+  const navigate=useNavigate();
   return (
     <div className='main-display-user-profile'>
       <div className='display-user-profile'>
@@ -17,7 +19,7 @@ const DisplayUserProfile = () => {
               <button className='connect-class'>
                 <FaConnectdevelop /> Connect
               </button>
-              <button className='edit-class'>
+              <button onClick={()=>navigate('/editprofile')} className='edit-class'>
                 <FaEdit /> Edit User
               </button>
             </div>
