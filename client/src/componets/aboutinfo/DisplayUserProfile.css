@@ -33,10 +33,22 @@
 }
 
 
+.main-creat-post button{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    background: rgb(187, 173, 173);
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 .profile-image{
     height: 95%;
     width: 30%;
     margin: 0.3rem;
+    border: 1px solid red;
 }
 
 

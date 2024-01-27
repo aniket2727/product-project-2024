@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaConnectdevelop, FaEdit, FaPen, FaTrash } from 'react-icons/fa';
 import './DisplayUserProfile.css';
 
 const DisplayUserProfile = () => {
@@ -13,10 +14,23 @@ const DisplayUserProfile = () => {
             </div>
             <div className='user-about-info'>
               <p>I am a computer programmer</p>
-              <button className='connect-class'>Connect</button>
-              <button className='edit-class'>Edit User</button>
+              <button className='connect-class'>
+                <FaConnectdevelop /> Connect
+              </button>
+              <button className='edit-class'>
+                <FaEdit /> Edit User
+              </button>
             </div>
           </div>
+        </div>
+
+        <div className='main-creat-post'>
+          <button>
+            <FaPen /> Create Post
+          </button>
+          <button>
+            <FaTrash /> Delete Post
+          </button>
         </div>
 
         <div className='main-post-user'>
