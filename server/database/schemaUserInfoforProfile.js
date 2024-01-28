@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const userprofileinfoschema = new mongoose.Schema({
+    userName:{
+      type:String,
+      require:true
+    },
     email:{
         type:String,
         required:true

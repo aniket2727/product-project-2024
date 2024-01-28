@@ -7,7 +7,7 @@ const BASE_URL = 'http://localhost:8008/hooks';
 // 1.apis for login
 export const addprofiledata = async (userName, birthdate, gender, aboutYourself, profileImage) => {
   try {
-    const response = await fetch(`${BASE_URL}/login/login`, {
+    const response = await fetch(`${BASE_URL}/addprofiledata/addprofiledata`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
