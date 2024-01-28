@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addInofabout } from '../Api/Handleapi';
+import { addprofiledata } from '../Api/aboutinfoapi';
 import './Aboutinfoprofile.css';
 
 const AboutinfoAddition = () => {
@@ -24,7 +24,7 @@ const AboutinfoAddition = () => {
       }
 
       // API request
-      const aboutApiResult = await addInofabout(userName, birthdate, gender, aboutYourself, profileImage);
+      const aboutApiResult = await addprofiledata(userName, birthdate, gender, aboutYourself, profileImage);
       toast.success(aboutApiResult);
       toast.success('Information saved successfully!');
     } catch (error) {

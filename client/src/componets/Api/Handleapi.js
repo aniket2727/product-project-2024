@@ -51,8 +51,4 @@ export const registerUser = async (email,name, pass) => {
   };
 
 
-  // 3.add about yourselfdata
-
-  export const addInofabout=(birthdatedata,gender,aboutyourself,imagedata)=>{
-
-  }
+  
