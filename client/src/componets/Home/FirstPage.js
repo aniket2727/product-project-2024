@@ -2,11 +2,12 @@
 
 
 import React from 'react'
+import DisplayUserProfile from '../aboutinfo/DisplayUserProfile'
 
 const FirstPage = () => {
   return (
     <div>
-      <h1>this is first data</h1>
+          
     </div>
   )
 }

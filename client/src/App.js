@@ -9,6 +9,7 @@ import FirstPage from './componets/Home/FirstPage';
 import Navigation from './componets/header/Navigation';
 import AboutinfoAddition from './componets/aboutinfo/AboutinfoAddition';
 import DisplayUserProfile from './componets/aboutinfo/DisplayUserProfile';
+import CreatPost from './componets/cratepost/CreatPost';
 
 function App() {
   return (
@@ -18,10 +19,11 @@ function App() {
           <Navigation/>
           <Routes>
             <Route path="/" element={<FirstPage/>} />
-            <Route path="/register" element={<SignOut />} />
+            <Route path="/register" element={<SignOut/>} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/edituserprofile" element={<AboutinfoAddition />} />
             <Route path="/displayuserprofile" element={<DisplayUserProfile/>} />
+            <Route path="/creatpost" element={<CreatPost/>} />
           </Routes>
         </BrowserRouter>
       </ApiProvider>

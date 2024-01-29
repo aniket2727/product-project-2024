@@ -16,7 +16,8 @@ const AboutinfoAddition = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userEmail = useSelector((state) => state.user.email);
+  //const userEmail = useSelector((state) => state.user.email);
+  const userEmail="aniket"
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -39,15 +40,15 @@ const AboutinfoAddition = () => {
   };
 
   const handleSave = async () => {
-    console.log(`name ${userName}, birthdate ${birthdate}, gender ${gender}, profileImage ${profileImage}, aboutYourself ${aboutYourself}`);
+    console.log(`name ${userName}, birthdate ${birthdate}, gender ${gender}, aboutYourself ${aboutYourself}`);
   
     try {
       // Additional debugging logs
-      console.log('userEmail fetched from redux',userEmail)
+      console.log('userEmail ',userEmail)
       console.log('userName.trim():', userName.trim());
       console.log('birthdate:', birthdate);
       console.log('gender:', gender);
-      console.log('profile image',profileImage);
+     // console.log('profile image',profileImage);
       console.log('aboutYourself.trim():', aboutYourself.trim());
       
       // Validation check

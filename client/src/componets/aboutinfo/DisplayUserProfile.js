@@ -27,7 +27,7 @@ const DisplayUserProfile = () =>{
         </div>
 
         <div className='main-creat-post'>
-          <button>
+          <button onClick={()=>navigate('/creatpost')}>
             <FaPen /> Create Post
           </button>
           <button>
