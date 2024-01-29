@@ -3,6 +3,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addprofiledata } from '../Api/aboutinfoapi';
 import './Aboutinfoprofile.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Resizer from 'react-image-file-resizer'; // Import the library
 
 const AboutinfoAddition = () => {
   const [userName, setUserName] = useState('');
@@ -11,20 +14,49 @@ const AboutinfoAddition = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [aboutYourself, setAboutYourself] = useState('');
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userEmail = useSelector((state) => state.user.email);
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setProfileImage(file);
+
+    if (file) {
+      // Resize and convert the image to base64
+      Resizer.imageFileResizer(
+        file,
+        300, // Width
+        300, // Height
+        'JPEG', // Format
+        100, // Quality
+        0, // Rotation
+        (base64Image) => {
+          setProfileImage(base64Image);
+        },
+        'base64' // Output type
+      );
+    }
   };
 
   const handleSave = async () => {
+    console.log(`name ${userName}, birthdate ${birthdate}, gender ${gender}, profileImage ${profileImage}, aboutYourself ${aboutYourself}`);
+  
     try {
+      // Additional debugging logs
+      console.log('userEmail fetched from redux',userEmail)
+      console.log('userName.trim():', userName.trim());
+      console.log('birthdate:', birthdate);
+      console.log('gender:', gender);
+      console.log('profile image',profileImage);
+      console.log('aboutYourself.trim():', aboutYourself.trim());
+      
       // Validation check
-      if (!userName || !birthdate || !gender || !profileImage || !aboutYourself) {
+      if (!userName.trim() || !birthdate || !gender || !aboutYourself.trim()) {
         throw new Error('Please fill in all required fields.');
       }
-
+  
       // API request
-      const aboutApiResult = await addprofiledata(userName, birthdate, gender, aboutYourself, profileImage);
+      const aboutApiResult = await addprofiledata(userEmail, userName,birthdate, gender, profileImage, aboutYourself  );
       toast.success(aboutApiResult);
       toast.success('Information saved successfully!');
     } catch (error) {
@@ -32,6 +64,7 @@ const AboutinfoAddition = () => {
       toast.error(error.message || 'Failed to save information. Please try again.');
     }
   };
+  
 
   return (
     <div className='main-about'>

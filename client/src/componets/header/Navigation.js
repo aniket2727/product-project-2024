@@ -8,13 +8,18 @@ import { useNavigate } from 'react-router-dom';
 import './navigation.css';
 
 const Navigation = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    var emailFromState = useSelector((state) => state.user.email);
+    const emailFromState = useSelector((state) => state.user.email);
 
     const handleLogout = () => {
+        console.log('logout is pressed ');
+
+        // Dispatch the action to clear user data
         dispatch(clearUserData());
-        emailFromState = null
+
+        // Redirect to the login page
+        navigate('/login');
     };
 
     return (
@@ -26,13 +31,13 @@ const Navigation = () => {
             <div className='LoginAndLogout'>
                 {emailFromState ? (
                     <>
-                        <button onClick={()=>handleLogout}><IoMdLogOut /> LOGOUT</button>
-                        <button onClick={()=>navigate('/aboutadd')}><IoMdPerson/> ACCOUNT</button>
+                        <button onClick={() => handleLogout()}><IoMdLogOut /> LOGOUT</button>
+                        <button onClick={() => navigate('/edituserprofile')}><IoMdPerson/> ACCOUNT</button>
                     </>
                 ) : (
                     <>
-                        <button onClick={()=>navigate('/login')}><IoMdPerson /> LOGIN</button>
-                        <button  onClick={()=>navigate('/register')}><IoMdPerson /> NEW ACCOUNT</button>
+                        <button onClick={() => navigate('/login')}><IoMdPerson /> LOGIN</button>
+                        <button onClick={() => navigate('/register')}><IoMdPerson /> NEW ACCOUNT</button>
                     </>
                 )}
             </div>

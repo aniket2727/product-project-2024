@@ -5,14 +5,17 @@
 const BASE_URL = 'http://localhost:8008/hooks';
 
 // 1.apis for login
-export const addprofiledata = async (userName, birthdate, gender, aboutYourself, profileImage) => {
+export const addprofiledata = async (userEmail, userName,birthdate, gender, profileimage, aboutinfo ) => {
+
+  const jsondata=JSON.stringify(userEmail,userName,birthdate,gender,profileimage,aboutinfo)
+  console.log("this is json data",jsondata)
   try {
     const response = await fetch(`${BASE_URL}/addprofiledata/addprofiledata`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({userName, birthdate, gender, aboutYourself, profileImage}),
+      body: JSON.stringify({userEmail, userName,birthdate, gender, profileimage, aboutinfo }),
     });
 
     if (!response.ok) {

@@ -3,12 +3,12 @@ const router = express.Router();
 const userprofileinfo = require('../database/schemaUserInfoforProfile');
 
 const adduserprofile = async (req, resp) => {
-    const { userName,email,birthdate, gender, profileimage, aboutinfo } = req.body;
+    const {userEmail, userName,birthdate, gender, profileimage, aboutinfo } = req.body;
 
     try {
         const userprofileinfoInstance = new userprofileinfo({
+            userEmail,
             userName,
-            email,
             birthdate,
             gender,
             profileimage,
