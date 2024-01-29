@@ -3,20 +3,22 @@
 
 const BASE_URL = 'http://localhost:8008/hooks';
 
-// 1.apis for login
-export const savepost= async (email,postedImage,imageCaption) => {
+
+export const savepost = async ( email,postimage, postcaption ) => {
+  console.log("seende data",email,postimage,postcaption)
   try {
-    const response = await fetch(`${BASE_URL}/login/login`, {
+    const response = await fetch(`${BASE_URL}/addpost/addpost`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({email,postedImage,imageCaption}),
+      body: JSON.stringify({ email, postimage, postcaption}),
     });
 
     if (!response.ok) {
-      throw new Error('Error ');
+      throw new Error('Error creating post');
     }
+
     const data = await response.json();
     return data;
   } catch (error) {
