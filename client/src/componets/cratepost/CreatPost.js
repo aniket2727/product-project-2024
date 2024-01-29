@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './create.css';
+import { savepost } from './handleapipostimage';
 
 const CreatePost = () => {
     const [image, setImage] = useState(null);
@@ -28,7 +29,9 @@ const CreatePost = () => {
                 image: base64Image,
                 caption,
             };
-            console.log('Post Data:', postData);
+            console.log(postData);
+            const userpostResult = await savepost(base64Image,caption);
+            console.log(userpostResult)
         } catch (error) {
             console.error('Error creating post:', error.message);
         }
