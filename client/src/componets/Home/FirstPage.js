@@ -1,8 +1,5 @@
 import React from 'react';
-
-
-
-import { FaUser, FaPlus } from 'react-icons/fa';
+import { FaUser, FaPlus, FaThumbsUp } from 'react-icons/fa';
 import './firstpage.css';
 import image1 from './image1.jpeg';
 
@@ -22,9 +19,13 @@ const FirstPage = () => {
                     </div>
                     <div className='main-post'>
                         <div className='main-post-image'>
-                        <img src={image1} alt="Description" /> {/* Added alt attribute for accessibility */}
+                            <img src={image1} alt="Description" /> {/* Added alt attribute for accessibility */}
                         </div>   
                     </div>
+
+                    <div className='main-likes'>
+                        <button><FaThumbsUp /> Like</button>
+                    </div>    
                 </div>
             ))}
         </div>

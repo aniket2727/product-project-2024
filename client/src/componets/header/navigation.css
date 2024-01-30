@@ -3,13 +3,13 @@
 
 
 .main-navigate{
+    margin: 0px;
     position: fixed;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 50px;
+    height: 70px;
     background-color: rgb(150, 188, 203);
 }
 
