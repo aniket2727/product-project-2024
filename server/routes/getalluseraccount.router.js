@@ -1,7 +1,8 @@
-
 const express = require('express');
 const router = express.Router();
-const allUserAccounts = require('../controller/getallaccount.controller');
+const getAllAccounts=require('../controller/getallaccount.controller')
+const jwtMiddleware = require('../middleware/webtokenmiddleware'); 
+// Route that requires token verification
+router.get('/getuseraccounts', jwtMiddleware, getAllAccounts);
 
-router.get('/getuseraccounts', allUserAccounts);
 module.exports = router;

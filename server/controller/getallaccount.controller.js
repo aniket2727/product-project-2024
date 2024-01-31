@@ -1,5 +1,4 @@
-// const express = require('express');
-// const router = express.Router();
+
 const userAccounts = require('../database/schemaUserInfoforProfile');
 
 const getallaccounts = async (req, resp) => {
