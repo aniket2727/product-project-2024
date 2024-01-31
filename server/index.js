@@ -11,6 +11,7 @@ const userprofileinfoRouter = require('./routes/userabout.router'); // add profi
 const getuserprofiledata=require('./routes/getprofiledatauser.router') // get profile data of users
 const addpostRouter = require('./routes/addpost.router'); //add post
 const getuserpost=require('./routes/getpost.router') //get posts
+const getallaccounts=require('./routes/getalluseraccount.router') // all users accounts
 
 
 app.use(express.json());
@@ -22,6 +23,7 @@ app.use('/hooks/addprofiledata', userprofileinfoRouter);  // add profile of the 
 app.use('/hooks/getuserprofile',getuserprofiledata)  // get user profile data
 app.use('/hooks/addpost', addpostRouter); // add post by the users
 app.use('/hooks/getpost',getuserpost)  // get all posts of user
+app.use('/hooks/getuseraccounts',getallaccounts) //get accounts of all users
 
 const PORT = 8008;
 app.listen(PORT, () => {
