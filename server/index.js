@@ -25,6 +25,7 @@ app.use('/hooks/addpost', addpostRouter); // add post by the users
 app.use('/hooks/getpost',getuserpost)  // get all posts of user
 app.use('/hooks/getuseraccounts',getallaccounts) //get accounts of all users
 
+
 const PORT = 8008;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

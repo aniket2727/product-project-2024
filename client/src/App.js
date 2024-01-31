@@ -10,6 +10,7 @@ import Navigation from './componets/header/Navigation';
 import AboutinfoAddition from './componets/aboutinfo/AboutinfoAddition';
 import DisplayUserProfile from './componets/aboutinfo/DisplayUserProfile';
 import CreatPost from './componets/cratepost/CreatPost';
+import Suggestion from './componets/connectionUser/Suggestion';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/edituserprofile" element={<AboutinfoAddition />} />
             <Route path="/displayuserprofile" element={<DisplayUserProfile/>} />
             <Route path="/creatpost" element={<CreatPost/>} />
+            <Route path="/newsuggestions" element={<Suggestion/>} />
           </Routes>
         </BrowserRouter>
       </ApiProvider>

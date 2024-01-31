@@ -5,7 +5,7 @@
 
 const BASE_URL = 'http://localhost:8008/hooks';
 
-// 1.apis for login
+// 1.apis for posts
 export const getposts = async (email, pass) => {
   try {
     const response = await fetch(`${BASE_URL}/getpost/getpost`)
